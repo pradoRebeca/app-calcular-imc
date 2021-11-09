@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".DashActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+   >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,11 +24,13 @@
         </androidx.cardview.widget.CardView>
 
         <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
             android:text="@string/cadastro_trocarfoto"
             android:textColor="@color/primary.dark"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 
@@ -38,22 +43,15 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/lock_24"
-                    android:layout_marginRight="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/cadastro_dados_para_autenticacao"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+                android:text="@string/cadastro_dados_para_autenticacao"
+                android:textSize="20sp"
+                android:drawableStart="@drawable/lock_24"
+                android:drawableTint="@color/primary.dark"
+                android:drawablePadding="10dp"
+                android:layout_gravity="center_vertical"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -63,8 +61,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <EditText
+                    android:id="@+id/edit_novo_email"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="textEmailAddress"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,26 +75,21 @@
                 app:boxBackgroundColor="@color/white">
 
                 <EditText
+                    android:id="@+id/edit_nova_senha"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="numberPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/lock_24"
-                    android:layout_marginRight="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/cadastro_dados_pessoais"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+                android:text="@string/cadastro_dados_pessoais"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/person_24"
+                android:drawableTint="@color/primary.dark"
+                android:drawablePadding="10dp"
+                android:layout_gravity="center_vertical"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -104,8 +99,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <EditText
+                    android:id="@+id/edit_nome"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="textCapWords"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -116,20 +113,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <EditText
+                    android:id="@+id/edit_profissao"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginBottom="10dp"
-                android:hint="@string/cadastro_nome"
-                app:boxBackgroundColor="@color/white">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="textCapWords"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -140,20 +127,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <EditText
+                    android:id="@+id/edit_altura"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginBottom="10dp"
-                android:hint="@string/cadastro_nome"
-                app:boxBackgroundColor="@color/white">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -164,37 +141,42 @@
                 app:boxBackgroundColor="@color/white">
 
                 <EditText
+                    android:id="@+id/edit_data_nascimento"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:inputType="date"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cadastro_sexo"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="5dp"/>
 
             <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/edit_feminino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/cadastro_feminino"
+                    android:layout_marginRight="15dp"/>
 
-                        <RadioButton android:id="@+id/btn_feminino"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/cadastro_feminino"
-                            android:layout_marginRight="10dp"/>
+                <RadioButton
+                    android:id="@+id/edit_masculino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/cadastro_maculino"
+                    android:layout_toEndOf="@id/edit_feminino"/>
 
-                        <RadioButton android:id="@+id/btn_masculino"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/cadastro_maculino"
-                            android:layout_toEndOf="@id/btn_feminino"/>
-                    </RelativeLayout>
                 </RadioGroup>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

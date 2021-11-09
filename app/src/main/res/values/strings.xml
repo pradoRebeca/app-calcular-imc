@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Health Calc</string>
+    <string name="app_name">Profile</string>
     <string name="app_titulo">HEALTH\nCALC</string>
     <string name="login_activity_login">Login</string>
     <string name="login_activity_subtitulo">Faça login para continuar</string>

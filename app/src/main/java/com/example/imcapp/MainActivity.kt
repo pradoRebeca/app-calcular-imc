@@ -1,29 +1,30 @@
-package com.example.menu_datepicker
+package com.example.imcapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
-import com.example.imcapp.R
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
-    }
+        setContentView(R.layout.activity_main)
+        supportActionBar!!.hide()
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_, menu)
-        return true
-    }
+        //instanciar o botão entar
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
-            R.id.menu_salvar -> (
-                    Toast.makeText(this, "Salvar", Toast.LENGTH_SHORT).show()
-                    )
+        val btnNovoUsuario = findViewById<Button>(R.id.btn_criar_conta)
+
+        //criar um listener - ouvinte
+        btnNovoUsuario.setOnClickListener {
+            //criar uma intent
+            val abrirCadastro = Intent(this, DashActivity::class.java)
+            startActivity(abrirCadastro)
+
         }
-        return true
+
     }
+
+
+
 }
