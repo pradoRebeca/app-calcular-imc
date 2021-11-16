@@ -18,13 +18,8 @@ class MainActivity : AppCompatActivity() {
         //criar um listener - ouvinte
         btnNovoUsuario.setOnClickListener {
             //criar uma intent
-            val abrirCadastro = Intent(this, DashActivity::class.java)
+            val abrirCadastro = Intent(this, CadastroActivity::class.java)
             startActivity(abrirCadastro)
-
         }
-
     }
-
-
-
 }

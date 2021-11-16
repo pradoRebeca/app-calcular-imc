@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImcApp">
         <activity android:name=".DashActivity"></activity>
+        <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
