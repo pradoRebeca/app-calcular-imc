@@ -88,6 +88,7 @@
                 app:endIconMode="clear_text">
 
                 <EditText
+                    android:id="@+id/edit_login_email"
                     android:drawableStart="@drawable/email_24"
                     android:drawablePadding="8dp"
                     android:layout_width="match_parent"
@@ -106,6 +107,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/edit_login_senha"
                     android:drawableStart="@drawable/lock_24"
                     android:drawablePadding="8dp"
                     android:layout_width="match_parent"
